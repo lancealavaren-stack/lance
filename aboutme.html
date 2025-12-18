@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Jlance | Web Development & IT Professional</title>
+<meta name="description" content="Learn more about Jlance, an Information Technology major specializing in Web Development. Discover my background, major, and social connections.">
+<link rel="canonical" href="aboutme.html">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-light: #f5f7fa;
+    --bg-lighter: #e8eef2;
+    --text-heading: #245585;
+    --text-body: #4a5568;
+    --accent-blue-start: #3498db;
+    --accent-blue-end: #1f618d;
+    --shadow-light: rgba(0,188,212,0.3);
+    --shadow-dark: rgba(0,0,0,0.1);
+}
+
+/* Global Styles */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0; padding: 0;
+    background: linear-gradient(135deg, var(--bg-lighter), var(--bg-light));
+    min-height: 100vh;
+}
+
+/* -------------------- NAVBAR UPDATED -------------------- */
+.navbar {
+    background: linear-gradient(135deg, var(--bg-lighter), var(--bg-light));
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px var(--shadow-dark);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Keeps menu links centered */
+    position: relative;      /* Context for absolute logo */
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100px;       /* Increased standard height */
+}
+
+.logo-container {
+    position: absolute;      /* Pins logo to corner */
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-bottom: 0;
+}
+
+.logo-image {
+    width: 90px;            /* Size for standard laptop/tablet screens */
+    height: 90px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+/* LARGE SCREEN LOGO SIZE - Matches your other pages */
+@media (min-width: 1200px) {
+    .logo-image {
+        width: 150px;       /* Consistent 150px size */
+        height: 150px;
+    }
+    .navbar nav {
+        min-height: 160px;  /* Height to fit the bigger logo */
+    }
+}
+
+.nav-container {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-body);
+    font-weight: 600;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 50%;
+    bottom: 0;
+    background-color: var(--text-heading);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after { width: 100%; }
+.nav-link:hover { color: var(--text-heading); transform: scale(1.05); }
+.nav-link.active { color: var(--text-heading); border-bottom: 2px solid var(--text-heading); }
+
+/* Responsive Navbar for mobile */
+@media (max-width: 850px) {
+    .navbar nav {
+        flex-direction: column;
+        min-height: auto;
+        padding: 15px 0;
+    }
+    .logo-container {
+        position: static;
+        transform: none;
+        margin-bottom: 10px;
+    }
+    .logo-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* -------------------- ABOUT ME SECTION -------------------- */
+.about-me-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 30px 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-dark);
+    gap: 50px;
+}
+
+.image-section {
+    flex: 0 0 300px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.image-section::before {
+    content: '';
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: 0;
+    background: linear-gradient(135deg, var(--accent-blue-start), var(--accent-blue-end));
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.image-circle {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    box-shadow: 0 0 0 10px #fff,0 0 20px var(--accent-blue-start),0 0 40px var(--accent-blue-end);
+    transition: box-shadow 0.4s ease;
+}
+
+.image-circle:hover {
+    box-shadow: 0 0 0 10px #fff,0 0 25px var(--accent-blue-start),0 0 60px var(--accent-blue-end),0 0 90px var(--accent-blue-end);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-section {
+    flex: 1 1 500px;
+    text-align: left;
+}
+
+.main-heading { 
+    color: var(--text-heading); 
+    font-size: 2.3em; 
+    margin: 20px 0; 
+    font-weight: bold;
+}
+
+.bio { 
+    font-size: 1.05em; 
+    margin-bottom: 25px; 
+    line-height: 1.6; 
+    color: var(--text-body);
+}
+
+.detail-group { display: flex; flex-direction: column; margin-bottom: 20px; }
+.detail-label { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 0.9em; color: var(--text-body);}
+.detail-label i { color: var(--accent-blue-start); font-size: 1.2em;}
+.detail-value { margin-top: 5px; font-size: 1.1em; color: var(--text-body);}
+.link-color.detail-value { color: var(--accent-blue-start); text-decoration: none;}
+.link-color.detail-value:hover { text-decoration: underline;}
+
+.timeline-btn { 
+    margin-top: 30px; 
+    background: linear-gradient(135deg, var(--accent-blue-start), var(--accent-blue-end)); 
+    color:#fff; 
+    padding:12px 35px; 
+    border:none; 
+    border-radius:6px; 
+    font-size:1.05em; 
+    font-weight:600; 
+    cursor:pointer; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-btn:hover { 
+    transform: translateY(-2px); 
+    box-shadow:0 6px 20px var(--shadow-light);
+}
+
+.social-heading { 
+    color: var(--text-heading); 
+    font-family:'Poppins', sans-serif; 
+    font-size:1.2em; 
+    font-weight:600; 
+    margin-top:30px; 
+    margin-bottom:12px;
+}
+
+.social-links { display:flex; align-items:center; gap:20px; justify-content:flex-start; flex-wrap: wrap; }
+.social-links a { color: var(--text-body); font-size:1.7em; transition: transform 0.25s ease, color 0.25s ease, text-shadow 0.25s;}
+.social-links a:hover { color: var(--accent-blue-start); transform: translateY(-5px) scale(1.15); text-shadow:0 0 12px var(--accent-blue-start); }
+
+/* Pop-in animation */
+@keyframes popIn {
+  0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+  60% { transform: translateY(-10px) scale(1.05); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.info-section > * { opacity: 0; animation: popIn 0.8s forwards; }
+.info-section > *:nth-child(1) { animation-delay: 0.1s; }
+.info-section > *:nth-child(2) { animation-delay: 0.2s; }
+.image-section, .image-circle, .profile-photo { opacity: 0; animation: popIn 0.8s forwards;}
+.image-section { animation-delay: 0s; }
+.image-circle { animation-delay: 0.1s; }
+.profile-photo { animation-delay: 0.2s; }
+
+/* -------------------- RESPONSIVE CONTENT -------------------- */
+@media (max-width: 850px) {
+    .about-me-container { flex-direction: column; align-items: center; text-align: center; gap: 30px; padding: 20px 15px;}
+    .image-section { flex: none; }
+    .info-section { flex: none; width: 100%; }
+    .social-links { justify-content: center; }
+}
+
+/* -------------------- FOOTER STYLE -------------------- */
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-body);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <nav>
+    <div class="logo-container">
+      <img src="logo.png.png" alt="Jlance Official Brand Logo - Web Development Portfolio" class="logo-image">
+    </div>
+    <div class="nav-container">
+      <a href="aboutme.html" class="nav-link active">ABOUT ME</a>
+      <a href="engagement.html" class="nav-link">ENGAGEMENT</a>
+      <a href="highlights.html" class="nav-link">ALBUM</a>
+      <a href="mutuals.html" class="nav-link">MUTUALS</a>
+      <a href="contacts.html" class="nav-link">CONTACT</a>
+    </div>
+  </nav>
+</header>
+
+<section class="about-me-container">
+  <div class="image-section">
+    <div class="image-circle">
+      <img src="lans.jpg.jpg" alt="Jlance - Information Technology Professional Portrait" class="profile-photo">
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h1 class="main-heading">About Me</h1>
+    <p class="bio">
+      Hi! I'm <b>Jerry Lance V. Alavaren, 22 </b>years old, passionate about photography, cooking, fashion, and exploring stories through movies and series. The beach and matcha symbolize the calm, balance, and creativity I value in life.
+    </p>
+
+    <div class="detail-group">
+      <p class="detail-label"><i class="fas fa-school"></i> SCHOOL</p>
+      <p class="detail-value">Northern Iloilo State University (NISU)</p>
+    </div>
+
+    <div class="detail-group">
+      <p class="detail-label"><i class="fas fa-user-friends"></i> PARENTS</p>
+      <p class="detail-value">Ronnie A. Alavaren (Farmer), Teresa V. Alavaren (Housewife)</p>
+    </div>
+
+    <div class="detail-group">
+      <p class="detail-label"><i class="fas fa-users"></i> SIBLINGS</p>
+      <p class="detail-value">Gabriel V. Alavren (Brother), Ronesa V. Alavaren (Sister)</p>
+    </div>
+
+    <div class="detail-group">
+      <p class="detail-label"><i class="fas fa-birthday-cake"></i> Birthdate</p>
+      <p class="detail-value">07/01/2003</p>
+    </div>
+
+    <div class="detail-group">
+      <p class="detail-label"><i class="fas fa-graduation-cap"></i> COLLEGE PROGRAM</p>
+      <p class="detail-value">Bachelor of Science in Information Technology</p>
+    </div>
+
+    <div class="detail-group">
+      <p class="detail-label"><i class="fas fa-code"></i> MAJOR</p>
+      <p class="detail-value">Web Development</p>
+    </div>
+
+    <div class="detail-group">
+      <p class="detail-label"><i class="fas fa-envelope"></i> EMAIL</p>
+      <a href="mailto:lancealavaren@gmail.com" class="detail-value link-color">lancealavaren@gmail.com</a>
+    </div>
+
+    <div class="detail-group">
+      <p class="detail-label"><i class="fas fa-phone"></i> PHONE</p>
+      <p class="detail-value">09307035437</p>
+    </div>
+
+    <h3 class="social-heading">Follow me on my social media</h3>
+    <div class="social-links">
+      <a href="https://www.instagram.com/lllncx_z?igsh=MXFkZWxyeWx6aXBtdg==" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/16ePa6HSyN/" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
+
+    <button class="timeline-btn" onclick="window.location.href='timeline.html'">My Storyline</button>
+  </div>
+</section>
+
+<footer>
+    &copy; 2025 Jlance. All Rights Reserved.
+</footer>
+
+<script>
+  const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+  const navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute("href").split("/").pop().toLowerCase();
+    if(currentPage === linkPage) link.classList.add("active");
+  });
+</script>
+
+</body>
+</html>

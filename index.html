@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jlance | Personal Portfolio & Web Development Showcase</title>
+<meta name="description" content="Welcome to Jlance's official portfolio. Explore digital stories, web development projects, and professional milestones.">
+<meta name="keywords" content="Jlance, Portfolio, Web Development, Digital Stories, IT Professional,jerry lance V. Alavaren">
+<link rel="canonical" href="index.html">
+<style>
+    /* ... (Your existing CSS remains the same) ... */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Georgia', serif;
+        background: linear-gradient(135deg, #e8eef2 0%, #f5f7fa 100%);
+        min-height: 100vh;
+        display: flex; /* Added to help footer positioning */
+        flex-direction: column;
+    }
+    .container { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        padding: 60px 20px;
+        flex: 1; /* Pushes footer to bottom */
+    }
+    .hero { 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        flex-direction: row; 
+        gap: 60px; 
+        flex-wrap: wrap;
+    }
+    .content { 
+        flex: 1; 
+        max-width: 500px; 
+        animation: slideInLeft 1s ease-out; 
+    }
+    h1 { 
+        font-size: 4rem; 
+        color: #245585; 
+        margin-bottom: 20px; 
+        line-height: 1.1; 
+        font-weight: 400; 
+        animation: fadeIn 1.2s ease-out; 
+        text-align: center;
+    }
+    .accent { 
+        width: 350px; 
+        height: 4px; 
+        background: linear-gradient(90deg, #f19967 0%, #e67e22 100%); 
+        margin: 30px auto; 
+        animation: slideInLeft 1.4s ease-out; 
+    }
+    .cta-button {
+        display: inline-block; 
+        padding: 16px 40px;
+        font-size: 1rem; 
+        font-weight: 600; 
+        text-transform: uppercase; 
+        letter-spacing: 1px;
+        border-radius: 50px;
+        text-decoration: none;
+        color: white;
+        background: linear-gradient(135deg, rgba(20, 119, 207, 0.85) 0%, rgba(46, 53, 174, 0.85) 100%);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 8px 25px rgba(0, 188, 212, 0.3), 0 4px 10px rgba(0,0,0,0.1);
+        transition: all 0.4s ease;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .cta-button:hover {
+        transform: translateY(-3px) scale(1.05);
+        background: linear-gradient(135deg, rgba(0,242,254,0.9) 0%, rgba(79,172,254,0.9) 100%);
+        box-shadow: 0 12px 30px rgba(0, 188, 212, 0.5), 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .image-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        gap: 20px;
+        animation: slideInRight 1s ease-out;
+        text-align: center;
+    }
+    .image-wrapper {
+        position: relative;
+        width: 450px;
+        height: 450px;
+    }
+    .image-wrapper::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        box-shadow: 0 0 40px rgba(9, 48, 164, 0.8), 0 0 60px rgba(43, 4, 219, 0.5);
+        animation: pulseFloat 6s ease-in-out infinite alternate;
+    }
+    .logo-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0 25px 70px rgba(0,0,0,0.12);
+        z-index: 1;
+        animation: float-sync 6s ease-in-out infinite;
+    }
+    .profile-image {
+        position: absolute; 
+        width: 85%; 
+        height: 85%; 
+        border-radius: 50%; 
+        object-fit: cover;
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%,-50%);
+        z-index: 2;
+        animation: float-sync 6s ease-in-out infinite;
+    }
+
+    /* -------------------- NEW FOOTER STYLE -------------------- */
+    footer {
+        text-align: center;
+        padding: 25px;
+        font-family: 'Poppins', sans-serif;
+        color: #4a5568;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        opacity: 0.8;
+    }
+
+    @keyframes pulseFloat {
+        0% { box-shadow: 0 0 35px rgba(0,188,212,0.7), 0 0 55px rgba(0,188,212,0.45); }
+        100% { box-shadow: 0 0 40px rgba(0,188,212,0.8), 0 0 60px rgba(0,188,212,0.5); }
+    }
+    @keyframes float-sync {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes slideInLeft { from{opacity:0;transform:translateX(-50px)} to{opacity:1;transform:translateX(0)} }
+    @keyframes slideInRight { from{opacity:0;transform:translateX(50px)} to{opacity:1;transform:translateX(0)} }
+
+    @media (max-width: 968px) { 
+        .hero { flex-direction: column; text-align: center; gap: 30px; } 
+        h1 { font-size: 3rem; } 
+        .image-wrapper { width: 350px; height: 350px; } 
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="hero">
+        <div class="content">
+            <h1>Exploring Ideas, Sharing Stories and Growing Every Day.</h1>
+            <div class="accent"></div>
+        </div>
+        <div class="image-section">
+            <div class="image-wrapper">
+                <img src="lans1.jpg.jpg" class="logo-img" alt="Logo Background">
+                <img src="logo.png.png" class="profile-image" alt="Professional Portrait">
+            </div>
+            <a href="aboutme.html" class="cta-button">About Me</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 Jlance. All Rights Reserved.
+</footer>
+
+</body>
+</html>

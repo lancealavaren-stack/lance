@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Jlance | Web Development Inquiries & Collaboration</title>
+<meta name="description" content="Get in touch with Jlance for web development projects, professional inquiries, or digital collaborations.">
+<link rel="canonical" href="contacts.html">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-light: #f5f7fa;
+    --bg-lighter: #e8eef2;
+    --text-heading: #245585;
+    --text-body: #4a5568;
+    --accent-blue-start: #3498db;
+    --accent-blue-end: #1f618d;
+    --shadow-light: rgba(0,188,212,0.3);
+    --shadow-dark: rgba(0,0,0,0.1);
+}
+
+/* Global Styles */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0; padding: 0;
+    background: linear-gradient(135deg, var(--bg-lighter), var(--bg-light));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------------- NAVBAR -------------------- */
+.navbar {
+    background: linear-gradient(135deg, var(--bg-lighter), var(--bg-light));
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px var(--shadow-dark);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100px;
+}
+
+.logo-container {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-bottom: 0;
+}
+
+.logo-image {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 1200px) {
+    .logo-image { width: 140px; height: 140px; }
+    .navbar nav { min-height: 150px; }
+}
+
+.nav-container {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-body);
+    font-weight: 600;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 50%;
+    bottom: 0;
+    background-color: var(--text-heading);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after { width: 100%; }
+.nav-link:hover { color: var(--text-heading); transform: scale(1.05); }
+.nav-link.active { color: var(--text-heading); border-bottom: 2px solid var(--text-heading); }
+
+/* -------------------- CONTACT SECTION -------------------- */
+.section-container {
+    width: 95%;
+    max-width: 900px;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1; /* Pushes footer down */
+}
+
+.section-title { 
+    color: var(--text-heading); 
+    font-size: 2.5em; 
+    margin-bottom: 40px; 
+    text-align: center; 
+    font-weight: bold;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-box {
+    width: 100%;
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+@keyframes fadePop {
+  0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+#contact form > div {
+    opacity: 0;
+    animation: fadePop 0.8s forwards;
+}
+#contact form > div:nth-child(1) { animation-delay: 0.1s; }
+#contact form > div:nth-child(2) { animation-delay: 0.2s; }
+#contact form > div:nth-child(3) { animation-delay: 0.3s; }
+
+#contact input, #contact textarea {
+    border: none;
+    border-bottom: 2px solid var(--accent-blue-start);
+    background: transparent;
+    padding: 12px 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#contact input:focus, #contact textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue-end);
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.1);
+}
+
+#contact form button {
+    background: var(--accent-blue-start);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1em;
+    width: fit-content;
+    margin: 10px auto 0;
+}
+
+#contact form button:hover {
+    background: var(--accent-blue-end);
+    transform: scale(1.05);
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    text-align: center;
+    padding: 25px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-body);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 850px) {
+    .navbar nav { flex-direction: column; min-height: auto; padding: 15px 0; }
+    .logo-container { position: static; transform: none; margin-bottom: 10px; }
+    .logo-image { width: 100px; height: 100px; }
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <nav>
+    <div class="logo-container">
+      <img src="logo.png.png" alt="Logo" class="logo-image">
+    </div>
+    <div class="nav-container">
+      <a href="aboutme.html" class="nav-link">ABOUT ME</a>
+      <a href="engagement.html" class="nav-link">ENGAGEMENT</a>
+      <a href="highlights.html" class="nav-link">ALBUM</a>
+      <a href="mutuals.html" class="nav-link">MUTUALS</a>
+      <a href="contacts.html" class="nav-link active">CONTACT</a>
+    </div>
+  </nav>
+</header>
+
+<section id="contact" class="section-container">
+  <h1 class="section-title">Get In Touch</h1>
+
+  <div class="form-box">
+    <form id="contact-form" action="https://formspree.io/f/meopyeqd" method="POST">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <div style="text-align:center;">
+        <button type="submit">Send Message</button>
+        <p id="form-status" style="margin-top:15px; font-weight:bold; color: var(--text-heading);"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+    &copy; 2025 Jlance. All Rights Reserved.
+</footer>
+
+<script>
+const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+const navLinks = document.querySelectorAll(".nav-link");
+navLinks.forEach(link => {
+  const linkPage = link.getAttribute("href").split("/").pop().toLowerCase();
+  if(currentPage === linkPage) link.classList.add("active");
+});
+
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  status.textContent = "Sending...";
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      status.textContent = "Message sent successfully! ✔️";
+      form.reset();
+    } else {
+      status.textContent = "Oops! Problem submitting form.";
+    }
+  } catch (error) {
+    status.textContent = "Error sending message.";
+  }
+});
+</script>
+
+</body>
+</html>

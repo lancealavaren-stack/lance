@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mutuals & Community | Jlance's Professional Network</title>
+<meta name="description" content="A directory of the digital community and professional mutuals within Jlance's network.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-light: #f5f7fa;
+    --bg-lighter: #e8eef2;
+    --text-heading: #245585;
+    --text-body: #4a5568;
+    --accent-blue-start: #3498db;
+    --accent-blue-end: #1f618d;
+    --shadow-dark: rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Georgia', serif;
+    margin: 0; padding: 0;
+    background: linear-gradient(135deg, var(--bg-lighter), var(--bg-light));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------------- NAVBAR -------------------- */
+.navbar {
+    background: linear-gradient(135deg, var(--bg-lighter), var(--bg-light));
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px var(--shadow-dark);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100px;
+}
+
+.logo-container {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo-image {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+@media (min-width: 1200px) {
+    .logo-image { width: 140px; height: 140px; }
+    .navbar nav { min-height: 150px; }
+}
+
+.nav-container {
+    display: flex;
+    gap: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-body);
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-link.active { color: var(--text-heading); border-bottom: 2px solid var(--text-heading); }
+
+/* -------------------- MUTUALS SECTION -------------------- */
+.mutuals-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px var(--shadow-dark);
+    flex: 1; /* Pushes footer down */
+}
+
+.section-title {
+    font-size: 2.5em;
+    color: var(--text-heading);
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.profiles-container {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: nowrap;   
+    gap: 20px;
+    justify-content: center;
+    overflow-x: auto; 
+    padding: 20px 10px;
+}
+
+.mutual-card {
+    background-color: var(--bg-lighter);
+    border-radius: 15px;
+    padding: 25px 15px;
+    flex: 0 0 220px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 6px 15px var(--shadow-dark);
+    opacity: 0;
+    transform: scale(0.7) translateY(40px);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mutual-card.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.mutual-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.mutual-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #fff;
+}
+
+.mutual-name {
+    font-size: 1.1em;
+    color: var(--text-heading);
+    margin-bottom: 15px;
+    min-height: 2.5em;
+}
+
+.mutual-link {
+    text-decoration: none;
+    background: var(--accent-blue-start);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+/* -------------------- FOOTER STYLE -------------------- */
+footer {
+    text-align: center;
+    padding: 25px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-body);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 850px) {
+    .profiles-container { justify-content: flex-start; }
+    .navbar nav { flex-direction: column; min-height: auto; padding: 15px 0; }
+    .logo-container { position: static; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <nav>
+    <div class="logo-container">
+      <img src="logo.png.png" alt="Logo" class="logo-image">
+    </div>
+    <div class="nav-container">
+      <a href="aboutme.html" class="nav-link">ABOUT ME</a>
+      <a href="engagement.html" class="nav-link">ENGAGEMENT</a>
+      <a href="highlights.html" class="nav-link">ALBUM</a>
+      <a href="mutuals.html" class="nav-link active">MUTUALS</a>
+      <a href="contacts.html" class="nav-link">CONTACT</a>
+    </div>
+  </nav>
+</header>
+<section class="mutuals-container"> 
+  <h2 class="section-title">Mutual Friends</h2>
+  <div class="profiles-container">
+    <div class="mutual-card">
+      <div class="mutual-avatar"><img src="shi.png.jpg" alt="Irish Mae Mapa - A creative thinker with big ideas."></div>
+      <h3 class="mutual-name">Irish Mae Mapa</h3>
+      <a href="https://knowirish.vercel.app" target="_blank" class="mutual-link">Visit Website</a>
+    </div>
+    <div class="mutual-card">
+      <div class="mutual-avatar"><img src="nersha.png.jpg" alt="Nersha Marie Beronio - Sharp mind with creative writing"></div>
+      <h3 class="mutual-name">Nersha Marie Beronio</h3>
+      <a href="https://nrshberonio.vercel.app/" target="_blank" class="mutual-link">Visit Website</a>
+    </div>
+    <div class="mutual-card">
+      <div class="mutual-avatar"><img src="beng.png.jpg" alt="Gleah Paciente - Determined, focused, and unstoppable."></div>
+      <h3 class="mutual-name">Gleah Paciente</h3>
+      <a href="https://gleah-paciente-website.vercel.app/" target="_blank" class="mutual-link">Visit Website</a>
+    </div>
+    <div class="mutual-card">
+     <div class="mutual-avatar"><img src="apol.png.jpg" alt="Merry Christle Castro - Driven by curiosity and excellence."></div>
+      <h3 class="mutual-name">Merry Christle Castro</h3>
+      <a href="https://merrychristlecastro.kesug.com/?i=1" target="_blank" class="mutual-link">Visit Website</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+    &copy; 2025 Jlance. All Rights Reserved.
+</footer>
+
+<script>
+  window.addEventListener('load', () => {
+    const cards = document.querySelectorAll('.mutual-card');
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.classList.add('visible');
+      }, index * 150);
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Engagements & Achievements | Jlance</title>
+<meta name="description" content="Explore the professional engagements, certificates, and academic milestones achieved by Jlance in the field of Information Technology.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-light: #f5f7fa;
+    --bg-lighter: #e8eef2;
+    --text-heading: #245585;
+    --text-body: #4a5568;
+    --accent-blue-start: #3498db;
+    --accent-blue-end: #1f618d;
+    --shadow-dark: rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Georgia', serif;
+    margin: 0; padding: 0;
+    background: linear-gradient(135deg, var(--bg-lighter), var(--bg-light));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------------- NAVBAR -------------------- */
+.navbar {
+    background: linear-gradient(135deg, var(--bg-lighter), var(--bg-light));
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px var(--shadow-dark);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100px;
+}
+
+.logo-container {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo-image {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+@media (min-width: 1200px) {
+    .logo-image { width: 140px; height: 140px; }
+    .navbar nav { min-height: 150px; }
+}
+
+.nav-container {
+    display: flex;
+    gap: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-body);
+    font-weight: 600;
+    padding-bottom: 5px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.nav-link.active { color: var(--text-heading); border-bottom: 2px solid var(--text-heading); }
+
+/* -------------------- MAIN CONTAINER -------------------- */
+.white-container {
+    width: 95%;
+    max-width: 1100px;
+    background: #ffffff;
+    margin: 30px auto;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    flex: 1; /* Pushes footer down */
+}
+
+.white-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-family: "Poppins";
+    color: var(--text-heading);
+}
+
+/* -------------------- CARDS SECTION -------------------- */
+.cards-section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.engagement-card-wrapper {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    background: var(--bg-lighter);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px var(--shadow-dark);
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.engagement-card-wrapper.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.card-image-outside {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.card-image-outside:hover { transform: scale(1.05); }
+.engagement-card { flex: 1; }
+.card-title { font-size: 1.3em; margin-bottom: 10px; color: var(--text-heading); font-family: 'Poppins'; }
+.card-description { font-size: 1em; color: var(--text-body); line-height: 1.6; }
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    text-align: center;
+    padding: 25px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-body);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* -------------------- LIGHTBOX -------------------- */
+.lightbox {
+    display: flex;
+    position: fixed;
+    z-index: 2000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.lightbox.active { opacity: 1; pointer-events: all; }
+.lightbox img { max-width: 90%; max-height: 80%; border-radius: 8px; }
+
+@media (max-width: 768px) {
+    .engagement-card-wrapper { flex-direction: column; text-align: center; }
+    .card-image-outside { width: 100%; max-width: 250px; height: 200px; }
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <nav>
+    <div class="logo-container">
+      <img src="logo.png.png" alt="Logo" class="logo-image">
+    </div>
+    <div class="nav-container">
+      <a href="aboutme.html" class="nav-link">ABOUT ME</a>
+      <a href="engagement.html" class="nav-link active">ENGAGEMENT</a>
+      <a href="highlights.html" class="nav-link">ALBUM</a>
+      <a href="mutuals.html" class="nav-link">MUTUALS</a>
+      <a href="contacts.html" class="nav-link">CONTACT</a>
+    </div>
+  </nav>
+</header>
+
+<div class="white-container">
+    <h2 class="white-title">Engagement & Involvement</h2>
+
+    <section class="cards-section-container">
+        <div class="engagement-card-wrapper">
+          <img src="officer.jpg.jpg" class="card-image-outside" alt="Leadership Milestone - Jlance Participating in Campus Organizations">
+          <div class="engagement-card">
+            <h3 class="card-title">Student College Organization</h3>
+            <p class="card-description">Being part of this college organization for the past three years has been a total game-changer. It has helped me level up my confidence and leadership skills, and I’m grateful for the opportunity to grow and develop as a person.</p>
+          </div>
+        </div>
+
+        <div class="engagement-card-wrapper">
+          <img src="pageant.jpg.png" alt="Pageant" class="card-image-outside">
+          <div class="engagement-card">
+            <h3 class="card-title">Pageantry</h3>
+            <p class="card-description">I completely stepped out of my comfort zone and joined a pageant. It was an incredible experience where I met amazing people and created unforgettable memories.</p>
+          </div>
+        </div>
+
+        <div class="engagement-card-wrapper">
+          <img src="mc.jpg.jpg" alt="MC" class="card-image-outside">
+          <div class="engagement-card">
+            <h3 class="card-title">Master Of Ceremony</h3>
+            <p class="card-description">I had an amazing time serving as the MC for our college program for two years. It pushed me far out of my comfort zone, but I loved every moment.</p>
+          </div>
+        </div>
+
+        <div class="engagement-card-wrapper">
+          <img src="achivement.jpeg.jpg" class="card-image-outside" alt="Academic Achievement - Jlance Receiving Recognition for Outstanding Performance">
+          <div class="engagement-card">
+            <h3 class="card-title">Academic Achiever</h3>
+            <p class="card-description">As a student with big dreams for my life and my family, I always do my best and work hard in everything I do. As an academic achiever, this is my testament to the hardships and perseverance I have gone through, proving that all my efforts have paid off. Seeing my parents proud of what I have achieved makes every struggle worth it.</p>
+          </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    &copy; 2025 Jlance. All Rights Reserved.
+</footer>
+
+<div id="lightbox" class="lightbox">
+    <span style="position:absolute; top:20px; right:30px; color:#fff; font-size:40px; cursor:pointer;">&times;</span>
+    <img src="" alt="Zoomed View">
+</div>
+
+<script>
+  window.addEventListener('load', () => {
+    const cards = document.querySelectorAll('.engagement-card-wrapper');
+    cards.forEach((card, i) => {
+      setTimeout(() => {
+        card.classList.add('visible');
+      }, i * 200);
+    });
+  });
+
+  const images = document.querySelectorAll('.card-image-outside');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+  const navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute("href").split("/").pop().toLowerCase();
+    if(currentPage === linkPage) link.classList.add("active");
+  });
+</script>
+
+</body>
+</html>
